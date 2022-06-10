@@ -1,0 +1,5 @@
+print("1 < 2 < 4 < 3:", 1 < 2 < 4 < 3)
+print("1 < 2 and 4 < 3:", 1 < 2 and 4 < 3)
+print("1 < 2 or 4 < 3:", 1 < 2 or 4 < 3)
+print("0 is False:", 0 == False)
+print("0 is not False:", not (0 == False))
