@@ -44,6 +44,8 @@
 |  r+  |              reading and writing              |
 |  w+  | writing and reading (overwrite or create new) |
 
+- \*args & \*\*kwargs
+
 &nbsp;
 
 ---
