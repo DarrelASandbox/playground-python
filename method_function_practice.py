@@ -149,3 +149,158 @@ def summer_69(arr):
 print("summer_69:", summer_69([1, 3, 5]))
 print("summer_69:", summer_69([4, 5, 6, 7, 8, 9]))
 print("summer_69:", summer_69([2, 1, 6, 9, 11]))
+
+
+def spy_game(nums):
+    string_list = []
+    for num in nums:
+        if num == 0 or num == 7:
+            string_list.append(num)
+
+    string_list = map(str, string_list)
+    contains = "".join(string_list).find("007")
+    return False if contains == -1 else True
+
+
+def spy_game2(nums):
+    code = [0, 0, 7, "x"]
+    for num in nums:
+        if num == code[0]:
+            code.pop(0)  # code.remove(num) also works
+    return len(code) == 1
+
+
+print(spy_game2([1, 2, 4, 0, 0, 7, 5]))
+print(spy_game2([1, 0, 2, 4, 0, 5, 7]))
+print(spy_game2([1, 7, 2, 0, 4, 5, 0]))
+
+
+def count_primes(num):
+    primes = [2]
+    x = 3
+    if num < 2:  # for the case of num = 0 or 1
+        return 0
+    while x <= num:
+        for y in range(3, x, 2):  # test all odd factors up to x-1
+            if x % y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    return len(primes)
+
+
+def count_primes2(num):
+    primes = [2]
+    x = 3
+    if num < 2:
+        return 0
+    while x <= num:
+        for y in primes:  # use the primes list!
+            if x % y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    return len(primes)
+
+
+print(count_primes(100))
+
+
+def print_big(letter):
+    patterns = {
+        1: "  *  ",
+        2: " * * ",
+        3: "*   *",
+        4: "*****",
+        5: "**** ",
+        6: "   * ",
+        7: " *   ",
+        8: "*   * ",
+        9: "*    ",
+    }
+    alphabet = {
+        "A": [1, 2, 4, 3, 3],
+        "B": [5, 3, 5, 3, 5],
+        "C": [4, 9, 9, 9, 4],
+        "D": [5, 3, 3, 3, 5],
+        "E": [4, 9, 4, 9, 4],
+    }
+    for pattern in alphabet[letter.upper()]:
+        print(patterns[pattern])
+
+
+print_big("d")  # Up to letter "E"
+
+###################################################################################################################################################
+
+from functools import reduce
+import math
+import string
+import numpy
+
+
+def vol(rad):
+    return 4 / 3 * math.pi * (rad ** 3)
+
+
+def ran_check(num, low, high):
+    if num >= low and num <= high:
+        return f"{num} is in the range between {low} and {high}"
+
+
+def ran_bool(num, low, high):
+    return num >= low and num <= high
+
+
+def up_low(s):
+    upper_char = 0
+    lower_char = 0
+
+    for char in s:
+        if char.isupper():
+            upper_char += 1
+        elif char.islower():
+            lower_char += 1
+        else:
+            pass
+
+    return f"No. of Upper case characters : {upper_char} \n No. of Upper case characters : {lower_char}"
+
+
+def unique_list(a_list):
+    return set(a_list)
+
+
+def multiply(numbers):
+    return reduce(lambda num1, num2: num1 * num2, numbers)
+
+
+def multiply2(numbers):
+    return numpy.prod(numpy.array(numbers))
+
+
+def palindrome(s):
+    s = s.replace(" ", "")
+    return s == s[::-1]
+
+
+def ispangram(str1, alphabet=string.ascii_lowercase):
+    return len(alphabet) == len("".join(set(str1.lower().replace(" ", ""))))
+
+
+print(f"{vol(2):.5f}")
+print(ran_check(5, 2, 7))
+print(ran_bool(3, 1, 10))
+print(up_low("Hello Mr. Rogers, how are you this fine Tuesday?"))
+print(unique_list([1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 5]))
+print(multiply([1, 2, 3, -4]))
+print(multiply2([1, 2, 3, -4]))
+print("palindrome:", palindrome("helleh"))
+print("palindrome:", palindrome("nurses run"))
+print("palindrome:", palindrome("abcba"))
+print("ispangram:", ispangram("The quick brown fox jumps over the lazy dog"))
+
