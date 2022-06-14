@@ -168,3 +168,17 @@ two.py is being run directly
 ---
 
 &nbsp;
+
+## Errors & Exceptions
+
+- [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
+
+```sh
+pylint pylint_test.py -r y
+```
+
+&nbsp;
+
+---
+
+&nbsp;
