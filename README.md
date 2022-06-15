@@ -182,3 +182,36 @@ pylint pylint_test.py -r y
 ---
 
 &nbsp;
+
+## Decorators & Generators
+
+- Decorators can be thought of as functions which modify the functionality of another function. They help to make your code shorter and more "Pythonic".
+  - Scenario: Imagine you have a simple function and you want to add more functionality to it
+    - Option 1: Add that extra code to your old function
+    - Option 2: Create a brand new function that contains the old code, and then add new code to that
+  - But what if you then want to remove that extra functionality?
+    - You would need to delete it manually, or make sure to have the old function
+
+```py
+@some_decorator
+def simple_func():
+    # Do simple stuff
+    return something
+```
+
+- Generators allow us to write a function that can send back a value and then later resume to pick up where it left off.
+- Allows us to generate a sequence of values over time.
+- The main difference in syntax will be the use of a [yield](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do) statement.
+- When a generator is complied they become an object that supports an iteration protocol.
+- That means when they are called in your code they don't actually return a value and then exit.
+- Generator will automatically suspend and resume their execution and state around the last point of value generation.
+- The main advantage here is that instead of having to compute an entire series of values up front, the generator computes one value and then suspends its activity awaiting the next instruction. This feature is known as state suspension.
+- Generators are best for calculating large sets of results (particularly in calculations that involve loops themselves) in cases where we don’t want to allocate the memory for all of the results at the same time.
+- [List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+- [How exactly does a generator comprehension work?](https://stackoverflow.com/questions/364802/how-exactly-does-a-generator-comprehension-work)
+
+&nbsp;
+
+---
+
+&nbsp;
