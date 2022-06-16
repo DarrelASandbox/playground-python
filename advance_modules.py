@@ -129,6 +129,130 @@ random.seed(101)
 print_header("random.seed:", random.randint(0, 100))
 
 ###################################################################################################################################################
+
+
+import pdb
+
+x = 1
+y = 2
+z = [3, 4, 5]
+
+print_header("\npdb module:")
+print_header("x + y:", (x + y))
+# pdb.set_trace()
+# print_header("z + y:", (z + y))
+
+
 ###################################################################################################################################################
+
+
+import re
+
+pattern = "shells"
+
+sentence2 = "The person's phone number is 408-555-1234. Call soon!"
+sentence3 = "50.0 Cat Dog, 485CatDog, alone in the world is a litt1e l0n-31-y c2t dog! caatt-ddoooggg catdog!?!?1"
+
+match = re.search(pattern, sentence)
+matches = re.findall(pattern, sentence)
+
+print(match)
+print(match.span(), match.start(), match.end())
+print(matches, len(matches), "matches")
+for match in re.finditer(pattern, sentence):
+    print(match)
+
+phone_number = re.search(r"\d{3}-\d{3}-\d{4}", sentence2)
+print_header("Phone Number:", phone_number.group())
+
+# compile() is recommended whenever you think you'll reuse the code.
+# It's more efficient in terms of speed and system resources.
+phone_pattern = re.compile(r"(\d{3})-(\d{3})-(\d{4})")
+print_header("Phone Number:", re.search(phone_pattern, sentence2).group(2))
+
+print_header("| Or operator:", re.search(r"cat|dog", sentence3))  # Or operator |
+print_header(". Wildcard:", re.findall(r".g", sentence3))  # . Wildcard
+print(re.findall(r"...g", sentence3))
+print_header("^ Starts with:", re.findall(r"^\d", sentence3))  # ^ Starts with
+print_header("$ Ends with:", re.findall(r"\d$", sentence3))  # $ Ends with
+
+# [^] Exclude, + join words back together
+print_header("[^] Exclude, + join:", re.findall(r"[^\d!?,. ]+", sentence3))
+
+# Find words that contains hyphen -
+print_header("[] Group:", re.findall(r"[\w]+-[\w]+", sentence3))
+
+
+###################################################################################################################################################
+
+
+import time
+import timeit
+
+
+# def list_comprehension(n):
+#     return [str(num) for num in range(n)]
+
+
+# def mapping(n):
+#     return list(map(str, range(n)))
+
+
+# start_time = time.time()
+# list_comprehension(25_000_000)
+# end_time = time.time()
+# print(end_time - start_time)
+
+runs = 1_000
+
+statement1 = """
+list_comprehension(1_000)
+"""
+
+setup1 = """
+def list_comprehension(n):
+    return [str(num) for num in range(n)]
+"""
+
+statement2 = """
+list_comprehension(1_000)
+"""
+
+setup2 = """
+def list_comprehension(n):
+    return [str(num) for num in range(n)]
+"""
+
+print(timeit.timeit(statement1, setup1, number=runs))
+print(timeit.timeit(statement2, setup2, number=runs))
+
+
+###################################################################################################################################################
+
+
+import zipfile
+
+file1 = open("advance_file1.txt", "w+")
+file1.write("advance_file1")
+file1.close()
+
+file2 = open("advance_file2.txt", "w+")
+file2.write("advance_file2")
+file2.close()
+
+compress_files = zipfile.ZipFile("zipped_files.zip", "w")
+compress_files.write("advance_file1.txt", compress_type=zipfile.ZIP_DEFLATED)
+compress_files.write("advance_file2.txt", compress_type=zipfile.ZIP_DEFLATED)
+compress_files.close()
+
+zip_obj = zipfile.ZipFile("zipped_files.zip", "r")
+zip_obj.extractall("extracted_content")
+
+dir_to_zip = os.path.abspath("./extracted_content")
+output_filename = "zipped_files_shutil"
+shutil.make_archive(output_filename, "zip", dir_to_zip)
+shutil.unpack_archive(output_filename + ".zip", "extracted_content_shutil", "zip")
+
+
 ###################################################################################################################################################
 ###################################################################################################################################################

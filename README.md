@@ -250,11 +250,38 @@ c += Counter()                  # remove zero and negative counts
 
 ### Python Debugger
 
+- The pdb module implements an interactive debugging environment for Python programs. It includes features to let you pause your program, look at the values of variables, and watch program execution step-by-step, so you can understand what your program actually does and find bugs in the logic.
+
 ### Overview of Regular Expressions
+
+- Regular expressions have to be able to filter out any string pattern you can imagine, which is why they have a complex string pattern format.
+
+| Character |   Description    | Pattern Code |  Match  |
+| :-------: | :--------------: | :----------: | :-----: |
+|    \d     |     A digit      |  file\_\d\d  | file_25 |
+|    \w     |   Alphanumeric   |  \w-\w\w\w   |  A-b_1  |
+|    \s     |   White space    |   a\sb\sc    |  a b c  |
+|    \D     |   A non digit    |    \D\D\D    |   ABC   |
+|    \W     | Non-alphanumeric |  \W\W\W\W\W  | \*-+=)  |
+|    \S     |  Non-whitespace  |   \S\S\S\S   |  Yoyo   |
+
+| Character |        Description        |  Pattern Code  |     Match      |
+| :-------: | :-----------------------: | :------------: | :------------: |
+|     +     | Occurs one or more times  | Version \w-\w+ | Version A-b1_1 |
+|    {3}    |  Occurs exactly 3 times   |     \D{3}      |      abc       |
+|   {2,4}   |    Occurs 2 to 4 times    |    \d{2,4}     |      123       |
+|   {3,}    |     Occurs 3 or more      |     \w{3,}     | anycharacters  |
+|    \*     | Occurs zero or more times |   A\*B\*C\*    |     AAACC      |
+|     ?     |       Once or none        |    plurals?    |     plural     |
 
 ### Timing your code - timeit
 
+- Python has a built-in timing modules (time & timeit) to do this.
+
 ### Unzipping and Zipping Files
+
+- zipfile library
+- shutil library
 
 &nbsp;
 
