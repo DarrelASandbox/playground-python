@@ -215,3 +215,49 @@ def simple_func():
 ---
 
 &nbsp;
+
+## Advance Python Modules
+
+### Collections
+
+```py
+sum(c.values())                 # total of all counts
+c.clear()                       # reset all counts
+list(c)                         # list unique elements
+set(c)                          # convert to a set
+dict(c)                         # convert to a regular dictionary
+c.items()                       # convert to a list of (elem, cnt) pairs
+Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
+c.most_common()[:-n-1:-1]       # n least common elements
+c += Counter()                  # remove zero and negative counts
+```
+
+### Opening and Reading Files Folders
+
+- Open files programatically
+- <code>os.unlink(path)</code> which deletes a file at the path provided
+- <code>os.rmdir(path)</code> which deletes a folder (folder must be empty) at the path provided
+- <code>shutil.rmtree(path)</code> this is the most dangerous, as it will remove all files and folders contained in the path. All of these methods can not be reversed! Which means if you make a mistake you won't be able to recover the file. Instead we will use the send2trash module. A safer alternative that sends deleted files to the trash bin instead of permanent removal.
+
+### Datetime
+
+- Time values are represented with the time class. Times have attributes for hour, minute, second, and microsecond. They can also include time zone information.
+
+### Math and Random
+
+- [numpy](https://numpy.org/)
+- [Python 3.x rounding behavior](https://stackoverflow.com/questions/10825926/python-3-x-rounding-behavior)
+
+### Python Debugger
+
+### Overview of Regular Expressions
+
+### Timing your code - timeit
+
+### Unzipping and Zipping Files
+
+&nbsp;
+
+---
+
+&nbsp;
