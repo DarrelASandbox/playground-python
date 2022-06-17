@@ -17,6 +17,7 @@
       </ol>
     </li>
     <li><a href="#web-scraping">Web Scraping</a></li>
+    <li><a href="#working-with-images---pillow">Working with Images - Pillow</a></li>
   </ol>
 </details>
 
@@ -330,6 +331,16 @@ c += Counter()                  # remove zero and negative counts
 |         soup.select('.notice')         |                                        All the HTML elements with the CSS <code>class</code> named notice                                         |
 |        soup.select('div span')         |                      Any elements named <code>&lt;span&gt;</code> that are within an element named <code>&lt;div&gt; </code>                      |
 |       soup.select('div > span')        | Any elements named <code>&lt;span&gt;</code> that are directly within an element named <code>&lt;div&gt;</code>, with no other element in between |
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Working with Images - Pillow
+
+- [pillow](https://pillow.readthedocs.io/en/stable/reference/Image.html)
 
 &nbsp;
 
