@@ -1,3 +1,27 @@
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#errors--exceptions">Errors & Exceptions</a></li>
+    <li><a href="#decorators--generators">Decorators & Generators</a></li>
+    <li><a href="#advance-python-modules">Advance Python Modules</a></li>
+      <ol>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#opening-and-reading-files-folders">Opening and Reading Files Folders</a></li>
+        <li><a href="#datetime">Datetime</a></li>
+        <li><a href="#python-debugger">Python Debugger</a></li>
+        <li><a href="#overview-of-regular-expressions">Overview of Regular Expressions</a></li>
+        <li><a href="#timing-your-code---timeit">Timing your code - timeit</a></li>
+        <li><a href="#unzipping-and-zipping-files">Unzipping and Zipping Files</a></li>
+      </ol>
+    </li>
+    <li><a href="#web-scraping">Web Scraping</a></li>
+  </ol>
+</details>
+
+&nbsp;
+
 ## About The Project
 
 - 2022 Complete Python Bootcamp From Zero to Hero in Python
@@ -282,6 +306,30 @@ c += Counter()                  # remove zero and negative counts
 
 - zipfile library
 - shutil library
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Web Scraping
+
+- Rules:
+  1. Always be respectful and try to get premission to scrape, do not bombard a website with scraping requests, otherwise your IP address may be blocked!
+  2. Be aware that websites change often, meaning your code could go from working to totally broken from one day to the next.
+  3. Pretty much every web scraping project of interest is a unique and custom job, so try your best to generalize the skills learned here.
+- Limitations:
+  - In general every website is unique, which means every web scraping script is unique
+  - A slight change or update to a website may completely break your script
+
+| Syntax to pass to the .select() method |                                                                   Match Results                                                                   |
+| :------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
+|           soup.select('div')           |                                                All elements with the <code>&lt;div&gt;</code> tag                                                 |
+|        soup.select('#some_id')         |                                 The HTML element containing the <code>id</code> attribute of <code>some_id</code>                                 |
+|         soup.select('.notice')         |                                        All the HTML elements with the CSS <code>class</code> named notice                                         |
+|        soup.select('div span')         |                      Any elements named <code>&lt;span&gt;</code> that are within an element named <code>&lt;div&gt; </code>                      |
+|       soup.select('div > span')        | Any elements named <code>&lt;span&gt;</code> that are directly within an element named <code>&lt;div&gt;</code>, with no other element in between |
 
 &nbsp;
 
