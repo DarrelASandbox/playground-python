@@ -19,6 +19,7 @@
     <li><a href="#web-scraping">Web Scraping</a></li>
     <li><a href="#working-with-images---pillow">Working with Images - Pillow</a></li>
     <li><a href="#working-with-pdfs-and-spreadsheet-csv-files">Working with PDFs and Spreadsheet CSV Files</a></li>
+    <li><a href="#emails">Emails</a></li>
   </ol>
 </details>
 
@@ -360,6 +361,114 @@ c += Counter()                  # remove zero and negative counts
 - <b>Libraries:</b> Pandas (Data analysis library), Openpyxl (Design for Excel files) & Google Sheets Python API
 - [Working with Excel Files in Python](https://www.python-excel.org/)
 - [PyPDF2 Library](https://pypi.org/project/PyPDF2/)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Emails
+
+- <b>Modules:</b> smtplib, imaplib, getpass & email
+
+|        Provider         |         SMTP server domain name         |
+| :---------------------: | :-------------------------------------: |
+|          Gmail          | (will need App Password) smtp.gmail.com |
+|       Yahoo Mail        |           smtp.mail.yahoo.com           |
+| Outlook.com/Hotmail.com |          smtp-mail.outlook.com          |
+|          AT&T           |    smpt.mail.att.net (Use port 465)     |
+|         Verizon         |     smtp.verizon.net (Use port 465)     |
+|         Comcast         |            smtp.comcast.net             |
+
+- Note for Gmail Users, you need to generate an app password instead of your normal email password.
+- This also requires enabling 2-step authentication.
+- Follow the instructions here to set-up 2-Step Factor Authentication as well as [App Password Generation](https://support.google.com/accounts/answer/185833?hl=en/)
+- Set-up 2 Factor Authentication, then create the App Password, choose Mail as the App and give it any name you want.
+- This will output a 16 letter password for you.
+- Pass in this password as your login password for the smtp.
+
+<table border="1">
+  <tr>
+    <th align="center">Keyword</th>
+    <th align="center">Definition</th>
+  </tr>
+
+  <tr>
+    <td>'ALL'</td>
+    <td>
+      Returns all messages in your email folder. Often there are size limits from imaplib.
+      To change these use imaplib._MAXLINE = 100 , where 100 is whatever you want the
+      limit to be.
+    </td>
+  </tr>
+
+  <tr>
+    <td>'BEFORE date'</td>
+    <td>Returns all messages before the date. Date must be formatted as 01-Nov-2000.</td>
+  </tr>
+
+  <tr>
+    <td>'ON date'</td>
+    <td>Returns all messages on the date. Date must be formatted as 01-Nov-2000.</td>
+  </tr>
+
+  <tr>
+    <td>'SINCE date'</td>
+    <td>Returns all messages after the date. Date must be formatted as 01-Nov-2000.</td>
+  </tr>
+
+  <tr>
+    <td>'FROM some_string '</td>
+    <td>
+      Returns all from the sender in the string. String can be an email, for example 'FROM
+      user@example.com' or just a string that may appear in the email, \"FROM example\"
+    </td>
+  </tr>
+
+  <tr>
+    <td>'TO some_string'</td>
+    <td>
+      Returns all outgoing email to the email in the string. String can be an email, for
+      example 'FROM user@example.com' or just a string that may appear in the email,
+      \"FROM example\"
+    </td>
+  </tr>
+
+  <tr>
+    <td>'CC some_string' and/or 'BCC some_string'</td>
+    <td>
+      Returns all messages in your email folder. Often there are size limits from imaplib.
+      To change these use imaplib._MAXLINE = 100 , where 100 is whatever you want the
+      limit to be.
+    </td>
+  </tr>
+
+  <tr>
+    <td>'SUBJECT string','BODY string','TEXT \"string with spaces\"'</td>
+    <td>
+      Returns all messages with the subject string or the string in the body of the email.
+      If the string you are searching for has spaces in it, wrap it in double quotes.
+    </td>
+  </tr>
+
+  <tr>
+    <td>'SEEN', 'UNSEEN'</td>
+    <td>
+      Returns all messages that have been seen or unseen. (Also known as read or unread)
+    </td>
+  </tr>
+
+  <tr>
+    <td>'ANSWERED', 'UNANSWERED'</td>
+    <td>Returns all messages that have been replied to or unreplied to.</td>
+  </tr>
+
+  <tr>
+    <td>'DELETED', 'UNDELETED'</td>
+    <td>Returns all messages that have been deleted or that have not been deleted.</td>
+  </tr>
+</table>
 
 &nbsp;
 
