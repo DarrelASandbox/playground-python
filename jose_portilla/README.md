@@ -18,6 +18,7 @@
     </li>
     <li><a href="#web-scraping">Web Scraping</a></li>
     <li><a href="#working-with-images---pillow">Working with Images - Pillow</a></li>
+    <li><a href="#working-with-pdfs-and-spreadsheet-csv-files">Working with PDFs and Spreadsheet CSV Files</a></li>
   </ol>
 </details>
 
@@ -341,6 +342,24 @@ c += Counter()                  # remove zero and negative counts
 ## Working with Images - Pillow
 
 - [pillow](https://pillow.readthedocs.io/en/stable/reference/Image.html)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Working with PDFs and Spreadsheet CSV Files
+
+- A file with the CSV file extension is a Comma Separated Values file.
+- All CSV files are plain text, contain alphanumeric characters, and structure the data contained within them in a tabular form.
+- Don't confuse Excel Files with csv files, while csv files are formatted very similarly to excel files, they don't have data types for their values, they are all strings with no font or color.
+- They also don't have worksheets the way an excel file does.
+- Files in the CSV format are generally used to exchange data, usually when there's a large amount, between different applications.
+- Database programs, analytical software, and other applications that store massive amounts of information (like contacts and customer data), will usually support the CSV format.
+- <b>Libraries:</b> Pandas (Data analysis library), Openpyxl (Design for Excel files) & Google Sheets Python API
+- [Working with Excel Files in Python](https://www.python-excel.org/)
+- [PyPDF2 Library](https://pypi.org/project/PyPDF2/)
 
 &nbsp;
 
