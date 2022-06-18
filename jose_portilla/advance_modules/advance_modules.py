@@ -3,6 +3,8 @@ def print_header(string, output=""):
     print("\33[36m" + string + "\x1b[0m", output)
 
 
+dir_url = "./jose_portilla/advance_modules/"
+
 ###################################################################################################################################################
 
 
@@ -48,17 +50,17 @@ file.close()
 
 print_header("\nos module:")
 print("os.getcwd(): " + os.getcwd())
-print("os.path.abspath(): " + os.path.abspath("./jose_portilla/example_top_level"))
+print("os.path.abspath(): " + os.path.abspath(dir_url + "example_top_level"))
 # print(os.listdir())
-print(os.listdir(os.path.abspath("./jose_portilla/example_top_level")))
+print(os.listdir(os.path.abspath(dir_url + "example_top_level")))
 
-shutil.move("shutil.txt", os.path.abspath("./jose_portilla/example_top_level"))
+shutil.move("shutil.txt", os.path.abspath(dir_url + "example_top_level"))
 
-send2trash.send2trash(os.path.abspath("./jose_portilla/example_top_level/shutil.txt"))
+send2trash.send2trash(os.path.abspath(dir_url + "example_top_level/shutil.txt"))
 
 print_header("\nos.walk:")
 for folder, sub_folders, files in os.walk(
-    os.path.abspath("./jose_portilla/example_top_level")
+    os.path.abspath(dir_url + "example_top_level")
 ):
     print(f"\33[34mFolder Path: {folder}\n")
     print(f"\n\33[35m\tSubfolders: ")
@@ -234,31 +236,27 @@ print(timeit.timeit(statement2, setup2, number=runs))
 
 import zipfile
 
-file1 = open("./jose_portilla/advance_file1.txt", "w+")
-file1.write("./jose_portilla/advance_file1")
+file1 = open(dir_url + "advance_file1.txt", "w+")
+file1.write(dir_url + "advance_file1")
 file1.close()
 
-file2 = open("./jose_portilla/advance_file2.txt", "w+")
-file2.write("./jose_portilla/advance_file2")
+file2 = open(dir_url + "advance_file2.txt", "w+")
+file2.write(dir_url + "advance_file2")
 file2.close()
 
-compress_files = zipfile.ZipFile("./jose_portilla/zipped_files.zip", "w")
-compress_files.write(
-    "./jose_portilla/advance_file1.txt", compress_type=zipfile.ZIP_DEFLATED
-)
-compress_files.write(
-    "./jose_portilla/advance_file2.txt", compress_type=zipfile.ZIP_DEFLATED
-)
+compress_files = zipfile.ZipFile(dir_url + "zipped_files.zip", "w")
+compress_files.write(dir_url + "advance_file1.txt", compress_type=zipfile.ZIP_DEFLATED)
+compress_files.write(dir_url + "advance_file2.txt", compress_type=zipfile.ZIP_DEFLATED)
 compress_files.close()
 
-zip_obj = zipfile.ZipFile("./jose_portilla/zipped_files.zip", "r")
-zip_obj.extractall("./jose_portilla/extracted_content")
+zip_obj = zipfile.ZipFile(dir_url + "zipped_files.zip", "r")
+zip_obj.extractall(dir_url + "extracted_content")
 
-dir_to_zip = os.path.abspath("./jose_portilla/extracted_content")
-output_filename = "./jose_portilla/zipped_files_shutil"
+dir_to_zip = os.path.abspath(dir_url + "extracted_content")
+output_filename = dir_url + "zipped_files_shutil"
 shutil.make_archive(output_filename, "zip", dir_to_zip)
 shutil.unpack_archive(
-    output_filename + ".zip", "./jose_portilla/extracted_content_shutil", "zip"
+    output_filename + ".zip", dir_url + "extracted_content_shutil", "zip"
 )
 
 

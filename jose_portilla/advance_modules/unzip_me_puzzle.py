@@ -3,13 +3,13 @@ import re
 import shutil
 
 shutil.unpack_archive(
-    "./jose_portilla/unzip_me_for_instructions.zip",
-    "./jose_portilla/extracted_content_unzip_me",
+    "./jose_portilla/advance_modules/unzip_me_for_instructions.zip",
+    "./jose_portilla/advance_modules/extracted_content_unzip_me",
     "zip",
 )
 
 for path, folders, files in os.walk(
-    os.getcwd() + "/jose_portilla/extracted_content_unzip_me"
+    os.getcwd() + "/jose_portilla/advance_modules/extracted_content_unzip_me"
 ):
     for file in files:
         if file.endswith(".txt"):

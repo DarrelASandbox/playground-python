@@ -1,7 +1,7 @@
 import csv
 import os
 
-csv_files_url = "/jose_portilla/csv_files/"
+csv_files_url = "/jose_portilla/csv_pdf/csv_files/"
 
 data = open(os.getcwd() + csv_files_url + "example.csv", encoding="utf-8")
 csv_data = list(csv.reader(data))
@@ -31,7 +31,7 @@ file_output.close()
 
 import PyPDF2
 
-pdf_files_url = "/jose_portilla/pdf_files/"
+pdf_files_url = "/jose_portilla/csv_pdf/pdf_files/"
 
 # Read binary
 file = open(os.getcwd() + pdf_files_url + "Working_Business_Proposal.pdf", "rb")

@@ -2,7 +2,7 @@ import random
 
 
 def create_cubes(nums):
-    result = map(lambda num: num**3, list(range(nums)))
+    result = map(lambda num: num ** 3, list(range(nums)))
     return list(result)
 
 
@@ -56,3 +56,6 @@ gencomp = (item for item in my_list if item > 3)
 
 for item in gencomp:
     print(item)
+
+
+###################################################################################################################################################

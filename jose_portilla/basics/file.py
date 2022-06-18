@@ -1,4 +1,4 @@
-file = open("./jose_portilla/file.txt", "w")
+file = open("./jose_portilla/basics/file.txt", "w")
 string = "Hello\n"
 multiple_strings = ["This is Delhi \n", "This is Paris \n", "This is London \n"]
 
@@ -12,6 +12,6 @@ file.writelines(multiple_strings)
 file.close()
 
 # Checking if the data is written to file or not
-file = open("./jose_portilla/file.txt", "r")
+file = open("./jose_portilla/basics/file.txt", "r")
 print(file.read())
 file.close()

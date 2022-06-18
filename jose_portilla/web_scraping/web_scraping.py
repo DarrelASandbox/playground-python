@@ -11,7 +11,7 @@ for item in soup.select(".toctext"):
 image_link = requests.get("https:" + soup.select(".thumbimage")[0]["src"])
 
 # Write binary
-file = open(os.getcwd() + "/jose_portilla/web_scraping_image1.jpg", "wb")
+file = open(os.getcwd() + "/jose_portilla/web_scraping/web_scraping_image1.jpg", "wb")
 file.write(image_link.content)
 file.close()
 
@@ -36,7 +36,9 @@ for page in range(1, 51):  # 50 pages
 
 print(f"\nWriting to {titles_text_file}.txt")
 
-with open(os.getcwd() + f"/jose_portilla/{titles_text_file}.txt", "w") as file:
+with open(
+    os.getcwd() + f"/jose_portilla/web_scraping/{titles_text_file}.txt", "w"
+) as file:
     for i, title in enumerate(five_star_titles):
         file.write(f"{i + 1}: {title}\n")
 
@@ -71,5 +73,6 @@ while str(soup.select("div")).find("No quotes found!") == -1:
 print(authors)
 print(quotes)
 print(tags)
+
 
 ###################################################################################################################################################
